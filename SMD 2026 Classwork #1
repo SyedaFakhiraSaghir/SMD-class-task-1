@@ -1,0 +1,30 @@
+void main() {
+  List<String> sentences = [
+  "this is a test this is",
+  "hello hello world",
+  "dart is fun fun fun"
+];
+  for (var i = 0; i <3; i++) {
+    List <String> templist= sentences[i].split(" ");
+    var highfreq="";
+    var maxcount= 0;
+    for (var k=0 ; k< templist.length;k++)
+    {
+      var count= 0;
+      for (var j=0 ; j< templist.length;j++)
+      {
+        if(templist[k]==templist[j])
+        {
+          count++;
+          
+        }
+      }
+      if (count>maxcount)
+      {
+        maxcount=count;
+        highfreq=templist[k];
+      }
+    }
+    print('[${highfreq}] (appears in sentence number ${i+1})');
+  }
+}
